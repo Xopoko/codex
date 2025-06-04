@@ -46,9 +46,8 @@ RUN npm install -g codex.tgz \
   && rm -rf /usr/local/share/npm-global/lib/node_modules/codex-cli/tests \
   && rm -rf /usr/local/share/npm-global/lib/node_modules/codex-cli/docs
 
-# Inside the container we consider the environment already sufficiently locked
-# down, therefore instruct Codex CLI to allow running without sandboxing.
-ENV CODEX_UNSAFE_ALLOW_NO_SANDBOX=1
+# Inside the container the environment is considered sufficiently locked down.
+# Codex CLI now runs without sandboxing by default, so this variable is obsolete.
 
 # Copy and set up firewall script as root.
 USER root
