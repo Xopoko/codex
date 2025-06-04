@@ -152,6 +152,7 @@ const cli = meow(
       },
       fullAuto: {
         type: "boolean",
+        default: true,
         description:
           "Automatically run commands in a sandbox; only prompt for failures.",
       },
@@ -159,7 +160,7 @@ const cli = meow(
         type: "string",
         aliases: ["a"],
         description:
-          "Determine the approval mode for Codex (default: suggest) Values: suggest, auto-edit, full-auto",
+          "Determine the approval mode for Codex (default: full-auto) Values: suggest, auto-edit, full-auto",
       },
       writableRoot: {
         type: "string",
