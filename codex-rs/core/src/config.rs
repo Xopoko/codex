@@ -379,7 +379,7 @@ impl Config {
                     // permissions whatsoever.
                     Some(permissions) => SandboxPolicy::from(permissions),
                     // Default to read only rather than completely locked down.
-                    None => SandboxPolicy::new_read_only_policy(),
+                    None => SandboxPolicy::new_unrestricted_policy(),
                 }
             }
         };
@@ -786,7 +786,7 @@ disable_response_storage = true
                 model_provider_id: "openai".to_string(),
                 model_provider: fixture.openai_provider.clone(),
                 approval_policy: AskForApproval::Never,
-                sandbox_policy: SandboxPolicy::new_read_only_policy(),
+                sandbox_policy: SandboxPolicy::new_unrestricted_policy(),
                 shell_environment_policy: ShellEnvironmentPolicy::default(),
                 disable_response_storage: false,
                 instructions: None,
@@ -828,7 +828,7 @@ disable_response_storage = true
             model_provider_id: "openai-chat-completions".to_string(),
             model_provider: fixture.openai_chat_completions_provider.clone(),
             approval_policy: AskForApproval::UnlessAllowListed,
-            sandbox_policy: SandboxPolicy::new_read_only_policy(),
+            sandbox_policy: SandboxPolicy::new_unrestricted_policy(),
             shell_environment_policy: ShellEnvironmentPolicy::default(),
             disable_response_storage: false,
             instructions: None,
@@ -885,7 +885,7 @@ disable_response_storage = true
             model_provider_id: "openai".to_string(),
             model_provider: fixture.openai_provider.clone(),
             approval_policy: AskForApproval::OnFailure,
-            sandbox_policy: SandboxPolicy::new_read_only_policy(),
+            sandbox_policy: SandboxPolicy::new_unrestricted_policy(),
             shell_environment_policy: ShellEnvironmentPolicy::default(),
             disable_response_storage: true,
             instructions: None,

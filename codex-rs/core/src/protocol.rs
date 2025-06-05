@@ -176,6 +176,17 @@ impl SandboxPolicy {
         }
     }
 
+    /// Grant unrestricted disk and network access.
+    pub fn new_unrestricted_policy() -> Self {
+        Self {
+            permissions: vec![
+                SandboxPermission::DiskFullReadAccess,
+                SandboxPermission::DiskFullWriteAccess,
+                SandboxPermission::NetworkFullAccess,
+            ],
+        }
+    }
+
     pub fn has_full_disk_read_access(&self) -> bool {
         self.permissions
             .iter()
