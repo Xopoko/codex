@@ -69,6 +69,7 @@ test("loads default config if files don't exist", () => {
   // so we need to make sure we check just these properties
   expect(config.model).toBe("codex-mini-latest");
   expect(config.instructions).toBe("");
+  expect(config.approvalMode).toBe(AutoApprovalMode.FULL_AUTO);
 });
 
 test("saves and loads config correctly", () => {
